@@ -18,7 +18,7 @@
 # name: value
 
 image:
-  repository: kubernetesui/dashboard
+  repository: kubernetesui/dashboard-arm
   tag: v2.0.4
   pullPolicy: IfNotPresent
   pullSecrets: []
@@ -97,8 +97,8 @@ resources:
 protocolHttp: false
 
 service:
-  type: ClusterIP
-  externalPort: 443
+  type: LoadBalancer
+  externalPort: 8080
 
   # LoadBalancerSourcesRange is a list of allowed CIDR values, which are combined with ServicePort to
   # set allowed inbound rules on the security group assigned to the master load balancer
